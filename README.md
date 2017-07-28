@@ -1,5 +1,7 @@
 # Minima
 
+Project developed for Minima services. Minima services is a small company from Croatia that specializes in transport and creating and assembling furniture. In this project Angular2 platform was used. Page is still in progress that you can check at [minima-usluge](https://minima-4cca1.firebaseapp.com/)
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
 ## Development server
