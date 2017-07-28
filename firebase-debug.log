@@ -1,0 +1,25 @@
+[debug] [2017-07-28T23:39:25.078Z] ----------------------------------------------------------------------
+[debug] [2017-07-28T23:39:25.080Z] Command:      /home/davor/.linuxbrew/Cellar/node/7.5.0/bin/node /home/davor/.linuxbrew/bin/firebase deploy
+[debug] [2017-07-28T23:39:25.081Z] CLI Version:  3.9.1
+[debug] [2017-07-28T23:39:25.081Z] Platform:     linux
+[debug] [2017-07-28T23:39:25.081Z] Node Version: v7.5.0
+[debug] [2017-07-28T23:39:25.081Z] Time:         Sat Jul 29 2017 01:39:25 GMT+0200 (CEST)
+[debug] [2017-07-28T23:39:25.081Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-28T23:39:25.093Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-28T23:39:25.093Z] > authorizing via signed-in user
+[debug] [2017-07-28T23:39:25.095Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/minima-4cca1  
+ Sat Jul 29 2017 01:39:25 GMT+0200 (CEST)
+[debug] [2017-07-28T23:39:26.668Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-28T23:39:26.670Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/minima-4cca1/tokens  
+ Sat Jul 29 2017 01:39:26 GMT+0200 (CEST)
+[debug] [2017-07-28T23:39:27.455Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'minima-4cca1'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing dist directory for upload...
+[debug] [2017-07-28T23:39:30.292Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/minima-4cca1/uploads/-KqAZQb5vPKo0BFn9mEd?fileCount=30&message=  
+ Sat Jul 29 2017 01:39:30 GMT+0200 (CEST)
+[debug] [2017-07-28T23:39:38.161Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-28T23:39:38.161Z] [hosting] .tgz uploaded successfully, waiting for extraction

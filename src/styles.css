@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+/* Default body */
+body {
+  text-align: center;
+  font-family: Ubuntu;
+}
+
+@media screen and (min-width: 1001px){
+  body {
+    cursor: pointer;
+  }
+}
+
+/* Spinner */
+.spinner {
+  margin: auto;
+  height: 100px;
+  width: 100px;
+  animation: rotate 0.8s infinite linear;
+  border: 8px solid #555555;
+  border-right-color: #0275d8;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.screen-center {
+  margin: auto;
+  width: 50%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

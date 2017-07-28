@@ -1,0 +1,39 @@
+<div class="title">
+  <h3>Dobrodošli na stranicu</h3>
+  <h3>MINIMA usluge</h3>
+</div>
+
+<div id="home-description">
+  <p>MINIMA USLUGE je mlada prijevoznička tvrtka koja se specijalizirala za selidbe, kombi prijevoz I odvoz otpada na
+    području grada Zagreba, ali i cijele Hrvatske i Europe. Također se bavimo izradom namještaja po mjeri, montažom i
+    demontažom namještaja.</p>
+  <p>
+    Specifičnost tvrtke MINIMA USLUGE je u 24-satnoj dostupnosti, radnim danom, vikendima i blagdanima, te adekvatan
+    broj djelatnika koji mogu odraditi sve poslove vezane uz transport i druge aktivnosti.
+  </p>
+  <p>U nastavku možete vidjeti neke od naših ponajboljih radova. Za više informacija pozivamo Vas da pogledate <a
+    [routerLink]="['usluge']">usluge</a> koje nudimo.</p>
+</div>
+
+<div class="carousel-container">
+  <div #carousel
+       class="carousel"
+       [ngClass]="{ 'initialized': showInitialized }"
+       materialize="carousel"
+       [materializeActions]="actions">
+    <a *ngFor="let image of images" class="carousel-item"><img [src]="image"></a>
+  </div>
+</div>
+
+<div *ngIf="isMobile()">
+  <a id="previous-btn"
+     class="waves-effect waves-light btn blue"
+     (click)="previousImage()">
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  </a>
+  <a id="next-btn"
+     class="waves-effect waves-light btn blue"
+     (click)="nextImage()">
+    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+  </a>
+</div>
