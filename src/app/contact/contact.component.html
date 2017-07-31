@@ -1,3 +1,28 @@
-<p>
-  contact works!
-</p>
+<div [ngClass]="getLayout()">
+  <div class="data-margin col s6">
+    <h3>Kontaktirajte nas</h3>
+    <div *ngFor="let entry of companyData" class="row">
+      <div class="key col s5">
+        {{entry.key}}:
+      </div>
+      <div class="col s1"></div>
+      <div class="value col s6">
+        {{entry.value}}
+      </div>
+    </div>
+
+    <h5>Pronađite nas na društvenim mrežama:</h5>
+    <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a>
+
+  </div>
+
+  <div class="col s6">
+    <agm-map [zoom]="googleMapsMeta.zoom" [latitude]="googleMapsMeta.latitude" [longitude]="googleMapsMeta.longitude">
+      <agm-marker [latitude]="googleMapsMeta.latitude" [longitude]="googleMapsMeta.longitude"></agm-marker>
+    </agm-map>
+  </div>
+</div>

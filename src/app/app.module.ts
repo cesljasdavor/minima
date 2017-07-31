@@ -13,6 +13,7 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import {routing} from "./app.routing";
 import {CarouselModule} from "ngx-bootstrap";
+import {AgmCoreModule} from "@agm/core";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,10 @@ import {CarouselModule} from "ngx-bootstrap";
     HttpModule,
     MaterializeModule,
     routing,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyArPrmq-j9vPUdWAWFh1zwtxVqxtHltPlI'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,55 @@
+agm-map {
+  height: 40em;
+}
+
+.col {
+  margin: 0;
+  padding: 0;
+}
+
+.data-margin {
+  margin-bottom: 5%;
+}
+
+.key {
+  color: #2196f3;
+  font-weight: bold;
+  text-align: right;
+  font-size: 125%;
+}
+
+.value {
+  color: #212121;
+  text-align: left;
+  font-size: 120%;
+}
+
+@media screen and (max-width: 640px){
+  .value {
+    word-wrap: break-word;
+    display: inline-block;
+  }
+}
+
+h3 {
+  color: #2196f3;
+  margin-bottom: 5%;
+}
+
+h5 {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  color: #2196f3;
+}
+
+a {
+  margin: 1%;
+}
+
+a i {
+  font-size: 300%;
+}
+
+a i:hover {
+  color: #212121;
+}
