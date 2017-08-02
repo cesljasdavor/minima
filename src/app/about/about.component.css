@@ -16,6 +16,11 @@ b {
   color: #212121;
 }
 
+@media screen and (max-width: 420px) {
+  img {
+    height: 6em;
+  }
+}
 
 @media screen and (max-width: 1000px){
   img {
