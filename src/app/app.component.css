@@ -1,14 +1,26 @@
-@media screen and (min-width: 0px) and (max-width: 400px) {
-  .phone {
+#email {
+  margin: 2%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #212121;
+}
+
+@media screen and (min-width: 0px) and (max-width: 640px) {
+  #phone {
     margin: 2%;
     position: fixed;
     bottom: 0;
     right: 0;
   }
+
+  #email {
+    right: 5em;
+  }
 }
 
-@media screen and (min-width: 401px) {
-  .phone {
+@media screen and (min-width: 641px) {
+  #phone {
     visibility: hidden;
     display: none;
   }

@@ -7,15 +7,6 @@ p {
   margin-top: 5%;
 }
 
-.carousel-container {
-  margin-left: 2%;
-  margin-right: 2%;
-}
-
-.no-upper-case {
-  text-transform: none
-}
-
 #home-description {
   text-align: justify;
   margin-left: 10%;
@@ -23,15 +14,3 @@ p {
   margin-top: 5%;
   width: 80%;
 }
-
-@media screen and (min-width: 641px) {
-  .carousel .carousel-item {
-    width: 20em !important;
-    height: 20em;
-  }
-
-  .carousel {
-    height: 40em;
-  }
-}
-

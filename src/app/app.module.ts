@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import {routing} from "./app.routing";
 import {CarouselModule} from "ngx-bootstrap";
 import {AgmCoreModule} from "@agm/core";
+import { DcCarouselComponent } from './shared/dc-carousel/dc-carousel.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {AgmCoreModule} from "@agm/core";
     ServicesComponent,
     ContactComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    DcCarouselComponent
   ],
   imports: [
     BrowserModule,

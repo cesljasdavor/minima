@@ -1,0 +1,24 @@
+<div class="carousel-container">
+  <div #carousel
+       class="carousel"
+       [ngClass]="{ 'initialized': showInitialized }"
+       [ngStyle]="!isMobile() && {'height.em': height * 2}"
+       materialize="carousel"
+       [materializeActions]="actions">
+    <a *ngFor="let image of images"
+       class="carousel-item"
+       [ngStyle]="!isMobile() && {'width.em': width, 'height.em': height}"
+    ><img [src]="image"></a>
+  </div>
+</div>
+
+<div *ngIf="isMobile()">
+  <a class="waves-effect btn blue"
+     (click)="previousImage()">
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  </a>
+  <a class="waves-effect btn blue"
+     (click)="nextImage()">
+    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+  </a>
+</div>

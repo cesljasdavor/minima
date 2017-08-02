@@ -1,13 +1,13 @@
 <div [ngClass]="getLayout()">
   <div class="data-margin col s6">
     <h3>Kontaktirajte nas</h3>
-    <div *ngFor="let entry of companyData" class="row">
+    <div *ngFor="let info of companyData" class="row">
       <div class="key col s5">
-        {{entry.key}}:
+        {{info.key}}:
       </div>
       <div class="col s1"></div>
       <div class="value col s6">
-        {{entry.value}}
+        {{info.value}}
       </div>
     </div>
 
@@ -16,7 +16,7 @@
     <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
     <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
     <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-    <a href="#"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a>
+    <a href="mailto:cesljasdavor@gmail.com"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a>
 
   </div>
 
