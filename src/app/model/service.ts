@@ -4,7 +4,8 @@ export class Service {
   constructor(
     public title: string,
     public description: string,
-    public prices?: PriceDescription[],
+    public representationPhoto: string,
+    public priceDescriptions?: PriceDescription[],
     public images?: string[]
   ) {}
 }

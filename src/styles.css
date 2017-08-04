@@ -45,3 +45,11 @@ body {
   left: 0;
   right: 0;
 }
+
+pre {
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: Ubuntu;
+  font-size: 120%;
+}

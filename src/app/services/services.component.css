@@ -1,0 +1,44 @@
+.card-image img {
+  width: 10em;
+  height: 10em;
+}
+
+.card.horizontal {
+  margin-bottom: 1%;
+}
+
+.col.s12 {
+  margin: 1%;
+}
+
+.list-item h5 {
+  color: #212121;
+}
+
+#title {
+  color: #2196f3;
+}
+
+#subtitle {
+  color: #2196f3;
+}
+
+.splitter {
+  border-right: solid 1px #d0d0d0;
+}
+
+#description h5 {
+  color: #2196f3;
+}
+
+#prices {
+  margin-bottom: 4%;
+}
+
+#prices h5{
+  color: #2196f3;
+}
+
+thead tr th {
+  color: #2196f3;
+}

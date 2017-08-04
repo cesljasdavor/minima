@@ -6,3 +6,7 @@
 .no-upper-case {
   text-transform: none
 }
+
+#navigation {
+  margin-bottom: 5%;
+}

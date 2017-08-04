@@ -1,8 +1,67 @@
-<div [ngClass]="getLayout()">
-  <div id="chooser" class="col s4">
+<h1 id="title">Usluge koje nudimo</h1>
 
+<div [ngClass]="getLayout()">
+
+  <div id="chooser" [ngClass]="getChooserClass()">
+    <a class="list-item"
+       (click)="changeSelected(service)"
+       *ngFor="let service of services">
+      <div class="card horizontal">
+        <div class="card-image">
+          <img [src]="service.representationPhoto">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <h5 align="center">{{service.title}}</h5>
+          </div>
+        </div>
+      </div>
+    </a>
   </div>
-  <div class="col s8">
+
+  <div #view id="view" [ngClass]="getViewClass()">
+    <h3 id="subtitle">{{selected.title}}</h3>
+    <div *ngFor="let service of services">
+      <dc-carousel *ngIf="service === selected && exists(selected.images)"
+                   [images]="service.images"
+                   [width]="20"
+                   [height]="20">
+
+      </dc-carousel>
+    </div>
+
+    <div class="row">
+      <div id="description"
+           [ngClass]="{
+           'col splitter': exists(selected.priceDescriptions),
+           's7': exists(selected.priceDescriptions) && !isMobile(),
+           's12': exists(selected.priceDescriptions) && isMobile()}">
+        <h5>Opis</h5>
+        <pre>
+          {{selected.description}}
+        </pre>
+      </div>
+
+      <div id="prices" *ngIf="exists(selected.priceDescriptions)" class="col"
+           [ngClass]="{'s12': isMobile(), 's5': !isMobile()}">
+        <h5>Cjenik</h5>
+        <table class="bordered">
+          <thead>
+          <tr>
+            <th>Usluga</th>
+            <th>Cijena</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr *ngFor="let pd of selected.priceDescriptions">
+            <td>{{pd.description}}</td>
+            <td>{{pd.price | number:'1.2-2'}} HRK</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
   </div>
 </div>
