@@ -16,3 +16,12 @@ nav {
   background-color: #212121;
   color: #2196f3;
 }
+
+.nav-link {
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.nav-link:hover {
+  background-color: #212121;
+}

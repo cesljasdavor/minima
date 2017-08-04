@@ -21,7 +21,7 @@
   </div>
 
   <div class="col s6">
-    <agm-map [zoom]="googleMapsMeta.zoom" [latitude]="googleMapsMeta.latitude" [longitude]="googleMapsMeta.longitude">
+    <agm-map id="map" [zoom]="googleMapsMeta.zoom" [latitude]="googleMapsMeta.latitude" [longitude]="googleMapsMeta.longitude">
       <agm-marker [latitude]="googleMapsMeta.latitude" [longitude]="googleMapsMeta.longitude"></agm-marker>
     </agm-map>
   </div>

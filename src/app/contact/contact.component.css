@@ -53,3 +53,7 @@ a i {
 a i:hover {
   color: #212121;
 }
+
+#map {
+  margin-right: 1%;
+}
