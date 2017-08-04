@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Util} from "./util/util";
 
 @Component({
   selector: 'minima-app',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  isMobile(): boolean {
+    return Util.isMobile();
+  }
 }
