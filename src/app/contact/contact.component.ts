@@ -1,35 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { Info } from "../model/info";
 import { Util } from "../util/util";
+import {ApplicationService} from "../application.service";
+import {SocialNetwork} from "../model/socialNetwork";
 
 @Component({
   selector: 'minima-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
+  animations: [
+    Util.getFadeAnimation(),
+    Util.getFadeAndInAnimation()
+  ]
 })
 export class ContactComponent implements OnInit {
-  googleMapsMeta = {latitude: 45.807044, longitude: 15.887927, zoom: 13};
+  googleMapsMeta;
 
-  companyData: Info[] = [
-    new Info("Naziv tvrtke", "MINIMA usluge j.d.o.o."),
-    new Info("Vlasnik", "Mario Vrabelj"),
-    new Info("Adresa", "Ivane Brlić Mažuranić 82A, 10000, Zagreb"),
-    new Info("OIB", "89265505905"),
-    new Info("IBAN", "HR83 2340 0091 1108 7901 3"),
-    new Info("Kontakt", "+385 98 200 186"),
-    new Info("E-mail", "minimausluge@gmail.com")
-  ];
+  companyData: Info[];
 
-  constructor() { }
+  socialNetworks: SocialNetwork[];
+
+  //For animations
+  titleOptions: any = Util.createScorllimateOptions(50);
+  companyDataOptions: any = Util.createScorllimateOptions(20);
+  socialNetworkOptions: any = Util.createScorllimateOptions(33)
+  googleMapOptions: any = Util.createScorllimateOptions(10);
+
+  constructor(private appService: ApplicationService) { }
 
   ngOnInit() {
+    this.googleMapsMeta = this.appService.getGoogleMapsMeta();
+
+    this.companyData = this.appService.getCompanyData();
+
+    this.socialNetworks = this.appService.getSocialNetworks();
+
+    Util.scrollTop();
   }
 
   getLayout(): string {
     return Util.isMobile() ? "" : "row";
-  }
-
-  isMobile(): boolean {
-    return Util.isMobile();
   }
 }

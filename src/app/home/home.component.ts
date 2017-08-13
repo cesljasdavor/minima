@@ -1,28 +1,41 @@
-import {Component, OnInit, ViewChild, EventEmitter} from '@angular/core';
+import {Component, OnInit, ViewChild, EventEmitter, trigger, state, style, transition, animate} from '@angular/core';
 import {Util} from "../util/util";
 import {MaterializeModule} from "angular2-materialize";
+import {ApplicationService} from "../application.service";
 
 @Component({
   selector: 'minima-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations: [
+    Util.getFadeAndInAnimation(),
+    Util.getFadeAnimation()
+  ]
 })
 export class HomeComponent implements OnInit {
 
-  images: string[] = [
-    "../../assets/home_page_images/1.jpg",
-    "../../assets/home_page_images/2.jpg",
-    "../../assets/home_page_images/3.jpg",
-    "../../assets/home_page_images/4.jpg",
-    "../../assets/home_page_images/5.jpg",
-    "../../assets/home_page_images/6.jpg",
-    "../../assets/home_page_images/7.jpg"
-  ];
+  images: string[];
+  titleOptions: any = Util.createScorllimateOptions(50);
+  textOptions: any[] = this.createTextOptions();
+  imagesOptions: any = Util.createScorllimateOptions(25);
 
-  constructor() {
+  constructor(private appService: ApplicationService) {
   }
 
   ngOnInit() {
+
+
+    this.images = this.appService.getHomePageImages();
+
+    Util.scrollTop();
   }
 
+  createTextOptions(): any[] {
+    const options = [];
+    for(let i=0; i < 3; i++) {
+      options.push(Util.createScorllimateOptions(20));
+    }
+
+    return options;
+  }
 }

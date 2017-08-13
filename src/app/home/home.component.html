@@ -1,18 +1,31 @@
-<div class="title">
+<!-- Title -->
+<div [@fade]="titleOptions.myScrollimation.currentState"
+     [scrollimate]="titleOptions.myScrollimation" class="title">
   <h3>Dobrodošli na stranicu</h3>
-  <h3>MINIMA usluge</h3>
+  <h3>MINIMA usluga</h3>
 </div>
 
+<!-- Small description -->
 <div id="home-description">
-  <p>MINIMA USLUGE je mlada prijevoznička tvrtka koja se specijalizirala za selidbe, kombi prijevoz I odvoz otpada na
+  <p [@fadeAndIn]="textOptions[0].myScrollimation.currentState"
+     [scrollimate]="textOptions[0].myScrollimation">
+    MINIMA usluge je mlada prijevoznička tvrtka koja se specijalizirala
+    za selidbe, kombi prijevoz I odvoz otpada na
     području grada Zagreba, ali i cijele Hrvatske i Europe. Također se bavimo izradom namještaja po mjeri, montažom i
     demontažom namještaja.</p>
-  <p>
+  <p [@fadeAndIn]="textOptions[1].myScrollimation.currentState"
+     [scrollimate]="textOptions[1].myScrollimation">
     Specifičnost tvrtke MINIMA USLUGE je u 24-satnoj dostupnosti, radnim danom, vikendima i blagdanima, te adekvatan
     broj djelatnika koji mogu odraditi sve poslove vezane uz transport i druge aktivnosti.
   </p>
-  <p>U nastavku možete vidjeti neke od naših ponajboljih radova. Za više informacija pozivamo Vas da pogledate <a
+  <p [@fadeAndIn]="textOptions[2].myScrollimation.currentState"
+     [scrollimate]="textOptions[2].myScrollimation">
+    U nastavku možete vidjeti galeriju slika nekih od naših usluga. Za više informacija pozivamo Vas da pogledate <a
     [routerLink]="['usluge']">usluge</a> koje nudimo.</p>
 </div>
 
-<dc-carousel [images]="images" [height]="20" [width]="20"></dc-carousel>
+<!-- Images -->
+<div [@fadeAndIn]="imagesOptions.myScrollimation.currentState"
+     [scrollimate]="imagesOptions.myScrollimation">
+  <dc-carousel [images]="images" [height]="20" [width]="20"></dc-carousel>
+</div>

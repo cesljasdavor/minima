@@ -1,12 +1,20 @@
-<h1 id="title">Usluge koje nudimo</h1>
+<!-- Main title -->
+<h1 [@fade]="titleOptions.myScrollimation.currentState"
+    [scrollimate]="titleOptions.myScrollimation"
+    class="title"
+    id="title">Usluge koje nudimo</h1>
 
 <div [ngClass]="getLayout()">
-
+  <!-- Choose services-->
   <div id="chooser" [ngClass]="getChooserClass()">
     <a class="list-item"
        (click)="changeSelected(service)"
-       *ngFor="let service of services">
-      <div class="card horizontal">
+       *ngFor="let service of services; let i = index">
+
+      <div [@fade]="servicesOptions[i].myScrollimation.currentState"
+           [scrollimate]="servicesOptions[i].myScrollimation"
+           class="card horizontal">
+        <!-- Image that represents service-->
         <div class="card-image">
           <img [src]="service.representationPhoto">
         </div>
@@ -19,8 +27,20 @@
     </a>
   </div>
 
-  <div #view id="view" [ngClass]="getViewClass()">
-    <h3 id="subtitle">{{selected.title}}</h3>
+  <!-- Selected service show -->
+  <div #view
+       [@fade]="subtitleOptions.myScrollimation.currentState"
+       [scrollimate]="subtitleOptions.myScrollimation" class="title"
+       id="view"
+       [ngClass]="getViewClass()">
+
+    <!-- Returns to last position if on mobile -->
+    <a id="back" *ngIf="isMobile()" (click)="scrollBack()">
+      Vrati se <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+    <!-- Selected service subtitle -->
+    <h3 id="subtitle"> {{selected.title}} </h3>
+    <!-- Images -->
     <div *ngFor="let service of services">
       <dc-carousel *ngIf="service === selected && exists(selected.images)"
                    [images]="service.images"
@@ -29,7 +49,7 @@
 
       </dc-carousel>
     </div>
-
+    <!-- Description -->
     <div class="row">
       <div id="description"
            [ngClass]="{
@@ -41,10 +61,14 @@
           {{selected.description}}
         </pre>
       </div>
-
+      <!-- Pricing-->
       <div id="prices" *ngIf="exists(selected.priceDescriptions)" class="col"
            [ngClass]="{'s12': isMobile(), 's5': !isMobile()}">
-        <h5>Cjenik</h5>
+        <!-- Price title with tooltip/toast -->
+        <h5 *ngIf="isMobile()" onclick="Materialize.toast('Sve cijene izražene su bez PDV-a', 4000)">Cjenik*</h5>
+        <h5 *ngIf="!isMobile()" materialize="tooltip" data-position="top" data-delay="5"
+            data-tooltip="Sve cijene izražene su bez PDV-a">Cjenik*</h5>
+        <!-- Pricing table -->
         <table class="bordered">
           <thead>
           <tr>
@@ -52,7 +76,6 @@
             <th>Cijena</th>
           </tr>
           </thead>
-
           <tbody>
           <tr *ngFor="let pd of selected.priceDescriptions">
             <td>{{pd.description}}</td>

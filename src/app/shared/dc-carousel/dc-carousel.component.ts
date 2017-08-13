@@ -27,7 +27,6 @@ export class DcCarouselComponent implements OnInit {
 
   ngOnInit() {
     window.setTimeout(() => {
-      this.images = [this.images[0], ...this.images];
       this.carouselElement.nativeElement.classList.toggle("initialized")
       this.actions.emit("carousel");
     },1000);

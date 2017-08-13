@@ -15,6 +15,8 @@ import {routing} from "./app.routing";
 import {CarouselModule} from "ngx-bootstrap";
 import {AgmCoreModule} from "@agm/core";
 import { DcCarouselComponent } from './shared/dc-carousel/dc-carousel.component';
+import {ApplicationService} from "./application.service";
+import {Ng2ScrollimateModule} from "ng2-scrollimate";
 
 @NgModule({
   declarations: [
@@ -36,9 +38,10 @@ import { DcCarouselComponent } from './shared/dc-carousel/dc-carousel.component'
     CarouselModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyArPrmq-j9vPUdWAWFh1zwtxVqxtHltPlI'
-    })
+    }),
+    Ng2ScrollimateModule
   ],
-  providers: [],
+  providers: [ApplicationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

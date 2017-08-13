@@ -1,5 +1,11 @@
-<div id="footer-split"></div>
-<p><a id="contact-us" [routerLink]="['/kontakt']">Kontaktirajte nas</a></p>
-<p><b>MINIMA usluge j.d.o.o.</b> Ivane Brlić Mažuranić 82A, Zagreb, Hrvatska</p>
-<p>Tvrtka za selidbe, kombi prijevoz i odvoz odpada na području čitave Europe</p>
-<br>
+<div [@fade]="footerOptions.myScrollimation.currentState"
+     [scrollimate]="footerOptions.myScrollimation" class="title">
+  <!-- Split line (look at css) -->
+  <div id="footer-split"></div>
+  <!-- Link to contact component -->
+  <p><a id="contact-us" [routerLink]="['/kontakt']">Kontaktirajte nas</a></p>
+  <!-- Really short info about the company-->
+  <p><b>MINIMA usluge j.d.o.o.</b> Ivane Brlić Mažuranić 82A, Zagreb, Hrvatska</p>
+  <p>Tvrtka za selidbe, kombi prijevoz i odvoz odpada na području čitave Europe</p>
+  <br>
+</div>

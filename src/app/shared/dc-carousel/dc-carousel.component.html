@@ -1,3 +1,4 @@
+<!-- Materialize carousel initialization -->
 <div class="carousel-container">
   <div #carousel
        class="carousel"
@@ -12,7 +13,8 @@
   </div>
 </div>
 
-<div id="navigation" *ngIf="isMobile()">
+<!-- Navigation for mobile phones (Materialize carousel doesn't work properly on mobile phones)-->
+<div id="navigation" *ngIf="isMobile() && images.length > 1">
   <a class="waves-effect btn blue"
      (click)="previousImage()">
     <i class="fa fa-arrow-left" aria-hidden="true"></i>

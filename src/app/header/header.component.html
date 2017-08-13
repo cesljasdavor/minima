@@ -1,5 +1,7 @@
+<!-- Navigation -->
 <nav class="blue">
   <div class="nav-wrapper">
+    <!-- Nav title -->
     <a [routerLink]="['/']" class="brand-logo"><b>{{title}}</b></a>
     <a href="#"
        materialize="sideNav"
@@ -8,11 +10,13 @@
        class="button-collapse">
       <i class="fa fa-bars" aria-hidden="true"></i>
     </a>
+    <!-- Normal nav -->
     <ul class="right hide-on-med-and-down">
       <li><a class="nav-link" [routerLink]="['usluge']" routerLinkActive="active">Usluge</a></li>
       <li><a class="nav-link" [routerLink]="['kontakt']" routerLinkActive="active">Kontakt</a></li>
       <li><a class="nav-link" [routerLink]="['o-nama']" routerLinkActive="active">O nama</a></li>
     </ul>
+    <!-- Mobile side nav-->
     <ul class="side-nav blue" id="mobile-demo">
       <li><a class="nav-link" [routerLink]="['usluge']" (click)="closeSideNav()" routerLinkActive="active">Usluge</a></li>
       <li><a class="nav-link" [routerLink]="['kontakt']" (click)="closeSideNav()" routerLinkActive="active">Kontakt</a></li>

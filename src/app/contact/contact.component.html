@@ -1,28 +1,42 @@
 <div [ngClass]="getLayout()">
   <div class="data-margin col s6">
-    <h3>Kontaktirajte nas</h3>
-    <div *ngFor="let info of companyData" class="row">
-      <div class="key col s5">
-        {{info.key}}:
-      </div>
-      <div class="col s1"></div>
-      <div class="value col s6">
-        {{info.value}}
+    <!-- Title -->
+    <h3 [@fade]="titleOptions.myScrollimation.currentState"
+        [scrollimate]="titleOptions.myScrollimation">
+      Kontaktirajte nas
+    </h3>
+
+    <!-- Company information-->
+    <div [@fadeAndIn]="companyDataOptions.myScrollimation.currentState"
+         [scrollimate]="companyDataOptions.myScrollimation">
+      <div *ngFor="let info of companyData" class="row">
+        <div class="key col s5">
+          {{info.key}}:
+        </div>
+        <div class="col s1"></div>
+        <div class="value col s6">
+          {{info.value}}
+        </div>
       </div>
     </div>
 
-    <h5>Pronađite nas na društvenim mrežama:</h5>
-    <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-    <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-    <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-    <a href="mailto:cesljasdavor@gmail.com"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a>
+    <!-- Social networks -->
+    <div [@fadeAndIn]="socialNetworkOptions.myScrollimation.currentState"
+         [scrollimate]="socialNetworkOptions.myScrollimation">
+      <h5>Pronađite nas na društvenim mrežama:</h5>
+      <a *ngFor="let sn of socialNetworks" href="{{sn.link}}"><i [ngClass]="sn.fontAwsomeClass" aria-hidden="true"></i></a>
+    </div>
 
   </div>
 
+  <!-- Google maps -->
   <div class="col s6">
-    <agm-map id="map" [zoom]="googleMapsMeta.zoom" [latitude]="googleMapsMeta.latitude" [longitude]="googleMapsMeta.longitude">
-      <agm-marker [latitude]="googleMapsMeta.latitude" [longitude]="googleMapsMeta.longitude"></agm-marker>
-    </agm-map>
+    <div [@fade]="googleMapOptions.myScrollimation.currentState"
+         [scrollimate]="googleMapOptions.myScrollimation"
+         id="map">
+      <agm-map [zoom]="googleMapsMeta.zoom" [latitude]="googleMapsMeta.latitude" [longitude]="googleMapsMeta.longitude">
+        <agm-marker [latitude]="googleMapsMeta.latitude" [longitude]="googleMapsMeta.longitude"></agm-marker>
+      </agm-map>
+    </div>
   </div>
 </div>

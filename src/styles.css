@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 /* Default body */
 body {
   text-align: center;
-  font-family: Ubuntu;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 @media screen and (min-width: 1001px){

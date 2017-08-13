@@ -31,6 +31,11 @@
   color: #2196f3;
 }
 
+pre {
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
 #prices {
   margin-bottom: 4%;
 }
@@ -41,4 +46,8 @@
 
 thead tr th {
   color: #2196f3;
+}
+
+#back:hover {
+  color: #212121;
 }
