@@ -1,7 +1,8 @@
-import {AnimationEntryMetadata, trigger, style, state, transition, animate} from "@angular/core";
+import {trigger, style, state, transition, animate} from "@angular/animations";
+
 export class Util {
 
-  private static fadeAndIn: AnimationEntryMetadata =
+  private static fadeAndIn =
     trigger("fadeAndIn", [
       state("inactive", style({
         opacity: 0,
@@ -15,7 +16,7 @@ export class Util {
       transition("active => inactive", animate("200ms ease-out"))
     ]);
 
-  private static fade: AnimationEntryMetadata =
+  private static fade =
     trigger("fade", [
         state("inactive", style({
           opacity: 0
@@ -36,11 +37,11 @@ export class Util {
     window.scrollTo(0, 0);
   }
 
-  public static getFadeAnimation(): AnimationEntryMetadata {
+  public static getFadeAnimation(): any {
     return Util.fade;
   }
 
-  public static getFadeAndInAnimation(): AnimationEntryMetadata {
+  public static getFadeAndInAnimation(): any {
     return Util.fadeAndIn;
   }
 

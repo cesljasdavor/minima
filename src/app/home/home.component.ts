@@ -1,6 +1,5 @@
-import {Component, OnInit, ViewChild, EventEmitter, trigger, state, style, transition, animate} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Util} from "../util/util";
-import {MaterializeModule} from "angular2-materialize";
 import {ApplicationService} from "../application.service";
 
 @Component({
@@ -23,8 +22,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-
-
     this.images = this.appService.getHomePageImages();
 
     Util.scrollTop();

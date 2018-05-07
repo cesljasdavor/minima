@@ -54,3 +54,8 @@ pre {
   font-family: Ubuntu;
   font-size: 120%;
 }
+
+.error {
+  color: crimson;
+  text-align: center;
+}
